@@ -14,24 +14,36 @@ const questions = [
     ""
 ];
 
+//Constructor to store input data locally for further use.
+function UserChoices (project, description, installation, usage, license, contributors) {
+
+    this.project = project;
+    this.description = description;
+    this.installation = installation;
+    this.usage = usage;
+    this.license = license;
+    this.contributors = contributors;
+
+}
+ 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
     //Logic goes in here.
-    fs.writeFile();
+    //fs.writeFile("README.md", ...);
 
 }
 
 // TODO: Create a function to initialize app
 function init() {
 
-    //Begin asking user questions.
-    //console.log("Hello world!");
+    getUserData();
 
 }
 
 //Get user input using inquirer.
-inquirer
+function getUserData () {
+    inquirer
     .prompt([
         {
             type: "input",
@@ -66,7 +78,13 @@ inquirer
             name: "contributors"
         }
 
-    ])
+    ]).then((response) => {
+        let readmeChoices = new UserChoices(response.project, response.description, response.installation, response.usage, response.license, response.contributors);
+        console.log(readmeChoices);
+    })
+}
 
 // Function call to initialize app
 init();
+
+module.exports = readmeChoices;

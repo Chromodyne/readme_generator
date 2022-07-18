@@ -85,7 +85,7 @@ function getUserData () {
             type: "list",
             message: questions[6],
             //TODO: Add all license choices. Reorganize.
-            choices: ["MIT", "GPL 3.0", "GPL 2.0", "None", "Apache 2.0", "GLPL 2.1"],
+            choices: ["MIT", "GPL 3.0", "GPL 2.0", "GLPL 2.1", "Apache 2.0", "None"],
             name: "license"
         },
         {
@@ -93,11 +93,14 @@ function getUserData () {
             message: questions[7],
             name: "contributors"
         }
+        //After grabbing user data through prompts
+    ]).then(writeReadme(response));
+}
 
-    ]).then((response) => {
-        let readmeChoices = new UserChoices(response.project, response.description, response.installation, response.usage, response.license, response.contributors);
-        console.log(readmeChoices);
-    })
+function writeReadme(data) {
+    writeToFile("README.md", generateMarkdown({...data}));
+    //DEBUGGING ONLY
+    console.log("README generated.");
 }
 
 // Function call to initialize app

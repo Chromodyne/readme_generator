@@ -2,12 +2,15 @@
 const inquirer = require("inquirer");
 const markdownGenerator = require("./utils/generateMarkdown");
 const fs = require("fs");
+const path = require("path");
 
 // TODO: Create an array of questions for user input
 const questions = [
+    "What is your GitHub Username?",
+    "What is your email address?",
     "What is the name of your project?",
     "What would you like your description text to be?",
-    "What are your installation instructions?",
+    "What are your installation instructions? (e.g npm i ...)",
     "What are your usage instructions?",
     "What license does your project use?",
     "Are there any contributors?",
@@ -15,22 +18,24 @@ const questions = [
 ];
 
 //Constructor to store input data locally for further use.
-function UserChoices (project, description, installation, usage, license, contributors) {
+// function UserChoices (project, description, installation, usage, license, contributors) {
 
-    this.project = project;
-    this.description = description;
-    this.installation = installation;
-    this.usage = usage;
-    this.license = license;
-    this.contributors = contributors;
+//     this.project = project;
+//     this.description = description;
+//     this.installation = installation;
+//     this.usage = usage;
+//     this.license = license;
+//     this.contributors = contributors;
 
-}
+// }
  
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-    //Logic goes in here.
-    //fs.writeFile("README.md", ...);
+    //Returns by writing a file...
+    //Uses writeFileSync over writeFile for no callback.
+    //TODO
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 
 }
 
@@ -48,33 +53,44 @@ function getUserData () {
         {
             type: "input",
             message: questions[0],
-            name: "project",
+            name: "username"
         },
         {
             type: "input",
             message: questions[1],
-            name: "description",
+            name: "email"
+
         },
         {
             type: "input",
             message: questions[2],
-            name: "installation",
+            name: "project",
         },
         {
             type: "input",
             message: questions[3],
+            name: "description",
+        },
+        {
+            type: "input",
+            message: questions[4],
+            name: "installation",
+        },
+        {
+            type: "input",
+            message: questions[5],
             name: "usage"
         },
         {
             type: "list",
-            message: questions[4],
+            message: questions[6],
             //TODO: Add all license choices. Reorganize.
             choices: ["MIT", "GPL 3.0", "GPL 2.0", "None", "Apache 2.0", "GLPL 2.1"],
             name: "license"
         },
         {
             type: "input",
-            message: questions[5],
+            message: questions[7],
             name: "contributors"
         }
 

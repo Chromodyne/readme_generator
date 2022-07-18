@@ -1,5 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+
 function renderLicenseBadge(license) {
   
   //TODO: Add actual return values and finish up adding licenses.
@@ -45,8 +46,6 @@ function renderLicenseBadge(license) {
     case "MIT":
       return;
 
-
-
     default:
       return "";
 
@@ -55,21 +54,27 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+
+  //If LICENSE return link
+  //ELSE return ""
+  if (license != "None") {
+
+  } else {
+    return "";
+  }
+
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
 
-  //Check which license received.
-  switch(license) {
-    case "GPL 3.0":
-      break;
-    case "MIT":
-      break;
-    default:
-      return "";
-  }
+}
+
+//Let's put our initial license check in here so we don't have to repeat ourselves.
+function checkLicense() {
 
 }
 

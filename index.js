@@ -17,18 +17,6 @@ const questions = [
     ""
 ];
 
-//Constructor to store input data locally for further use.
-// function UserChoices (project, description, installation, usage, license, contributors) {
-
-//     this.project = project;
-//     this.description = description;
-//     this.installation = installation;
-//     this.usage = usage;
-//     this.license = license;
-//     this.contributors = contributors;
-
-// }
- 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
@@ -97,6 +85,7 @@ function getUserData () {
     ]).then(writeReadme(response));
 }
 
+//This function writes to the generated README using the data received from the inquirer input.
 function writeReadme(data) {
     writeToFile("README.md", generateMarkdown({...data}));
     //DEBUGGING ONLY

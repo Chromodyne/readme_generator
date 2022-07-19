@@ -17,12 +17,12 @@ function renderLicenseBadge(license) {
 
 }
 
-
+//TODO: Figure this out.
 function renderLicenseLink(license) {
 
 }
 
-//Used by the renderLicenseLink function to generate the license text. May be merged.
+//Used by the renderLicenseSection function to generate the license text. May be merged.
 function generateLicenseText(license) {
 
   let licenseText = `## License ##\n
@@ -46,6 +46,8 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 //Generates the markdown used in creating the README.md file.
 function generateMarkdown(data) {
+  //TODO: Finish this, flesh out contents. Decide on arrangement.
+  //Separate blocks maybe? 
   return `# ${data.title} #\n
   \n
   ${renderLicenseBadge(data.license)}
@@ -54,9 +56,17 @@ function generateMarkdown(data) {
 
   ${data.description}
 
+  
   ## Contents ##
 
-  ##
+  ## Licensing ##
+
+  ## Installation ##
+
+  ## Use ##
+
+  ## Contributing ##
+
 
 `;
 }

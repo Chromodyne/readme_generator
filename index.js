@@ -17,21 +17,11 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-
-    //Returns by writing a file...
-    //Uses writeFileSync over writeFile for no callback.
-    //TODO
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-
+function writeToFile() {
+    
 }
 
 // TODO: Create a function to initialize app
-function init() {
-
-    getUserData();
-
-}
 
 //Get user input using inquirer.
 function getUserData () {
@@ -40,12 +30,12 @@ function getUserData () {
         {
             type: "input",
             message: questions[0],
-            name: "username"
+            name: "username",
         },
         {
             type: "input",
             message: questions[1],
-            name: "email"
+            name: "email",
         },
         {
             type: "input",
@@ -68,27 +58,24 @@ function getUserData () {
             name: "usage"
         },
         {
-            type: "list",
-            message: questions[6],
-            //TODO: Add all license choices. Reorganize.
-            choices: ["MIT", "GPL 3.0", "GPL 2.0", "GLPL 2.1", "Apache 2.0", "None"],
-            name: "license"
-        },
-        {
             type: "input",
             message: questions[7],
             name: "contributors"
         }
         //After grabbing user data through prompts
-    ]).then(writeReadme(response));
+    ]).then( (response) => {
+        console.log(response);
+    })
 }
-
 //This function writes to the generated README using the data received from the inquirer input.
 function writeReadme(data) {
+    //Pass destructured data from inquirer to markdownGenerator form README then write
     writeToFile("README.md", markdownGenerator({...data}));
+}
+
+function init() {
+    getUserData();
 }
 
 // Function call to initialize app
 init();
-
-module.exports = readmeChoices;

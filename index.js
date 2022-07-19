@@ -20,7 +20,7 @@ const licenseOptions = ["MIT", "GPLv3", "GPLv2", "AGPL_v3", "LGPL_v3", "Apache_2
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    return fs.writeFile(path.join(process.cwd(), fileName), data);
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
 // TODO: Create a function to initialize app
@@ -83,6 +83,10 @@ function writeReadme(data) {
 
 function init() {
     getUserData();
+}
+
+function hello() {
+    console.log("Hello world!");
 }
 
 // Function call to initialize app

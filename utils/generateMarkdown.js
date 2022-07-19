@@ -25,12 +25,13 @@ function renderLicenseLink(license) {
 //Used by the renderLicenseLink function to generate the license text. May be merged.
 function generateLicenseText(license) {
 
-  return `## License ##
-  
-  The license for this project is a ${license} license.
-  `;
-}
+  let licenseText = `## License ##\n
+  \n
+  The license for this project is a ${license} license.`;
 
+  return licenseText;
+
+}
 
 function renderLicenseSection(license) {
 
@@ -40,14 +41,13 @@ function renderLicenseSection(license) {
     return "";
   }
 
-
 }
 
 // TODO: Create a function to generate markdown for README
 //Generates the markdown used in creating the README.md file.
 function generateMarkdown(data) {
-  return `# ${data.title} #
-
+  return `# ${data.title} #\n
+  \n
   ${renderLicenseBadge(data.license)}
 
   ## Description ##

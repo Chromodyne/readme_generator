@@ -52,14 +52,19 @@ function generateMarkdown(data) {
   \n
   ${renderLicenseBadge(data.license)}
 
+  ## Contents ##
+
+  [Description](#description)
+
+  [License](#license)
+
+  []
+
   ## Description ##
 
   ${data.description}
 
-  
-  ## Contents ##
-
-  ## Licensing ##
+  ## License ##
 
   ## Installation ##
 

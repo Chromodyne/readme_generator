@@ -16,9 +16,11 @@ const questions = [
     "Are there any contributors?"
 ];
 
+const licenseOptions = ["MIT", "GPLv3", "GPLv2", "AGPL_v3", "LGPL_v3", "Apache_2.0", "MIT", "MPL_2.0", "None"];
+
 // TODO: Create a function to write README file
-function writeToFile() {
-    
+function writeToFile(fileName, data) {
+    return fs.writeFile(path.join(process.cwd(), fileName), data);
 }
 
 // TODO: Create a function to initialize app
@@ -58,13 +60,19 @@ function getUserData () {
             name: "usage"
         },
         {
+            type: "list",
+            message: questions[6],
+            choices: licenseOptions,
+            name: "license"
+        },
+        {
             type: "input",
             message: questions[7],
             name: "contributors"
         }
         //After grabbing user data through prompts
     ]).then( (response) => {
-        console.log(response);
+        writeReadme(response);
     })
 }
 //This function writes to the generated README using the data received from the inquirer input.

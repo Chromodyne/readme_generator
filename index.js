@@ -46,7 +46,6 @@ function getUserData () {
             type: "input",
             message: questions[1],
             name: "email"
-
         },
         {
             type: "input",
@@ -86,9 +85,7 @@ function getUserData () {
 
 //This function writes to the generated README using the data received from the inquirer input.
 function writeReadme(data) {
-    writeToFileSync("README.md", markdownGenerator({...data}));
-    //DEBUGGING ONLY
-    console.log("README generated.");
+    writeToFile("README.md", markdownGenerator({...data}));
 }
 
 // Function call to initialize app

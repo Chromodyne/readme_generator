@@ -13,8 +13,7 @@ const questions = [
     "What are your installation instructions? (e.g npm i ...)",
     "What are your usage instructions?",
     "What license does your project use?",
-    "Are there any contributors?",
-    ""
+    "Are there any contributors?"
 ];
 
 // TODO: Create a function to write README file
@@ -87,7 +86,7 @@ function getUserData () {
 
 //This function writes to the generated README using the data received from the inquirer input.
 function writeReadme(data) {
-    writeToFile("README.md", generateMarkdown({...data}));
+    writeToFileSync("README.md", markdownGenerator({...data}));
     //DEBUGGING ONLY
     console.log("README generated.");
 }

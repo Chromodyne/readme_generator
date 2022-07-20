@@ -25,7 +25,6 @@ const licenseOptions = [
     "AGPL_v3",
     "LGPL_v3",
     "Apache_2.0",
-    "MIT",
     "MPL_2.0",
     "CCv3",
     "None"];

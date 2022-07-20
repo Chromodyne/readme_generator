@@ -8,4 +8,6 @@
 
   ## Video ##
 
-  []()
+  A brief video explaining what the application does and how to use it can be found here:
+
+  https://www.youtube.com/watch?v=LH51ICxCcRo

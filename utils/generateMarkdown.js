@@ -51,12 +51,13 @@ function generateMarkdown(data) {
 
   1. [Description](#description)
 
-
   3. [Installation](#installation)
 
   4. [Usage](#usage)
 
   5. [Contributions](#contributions)
+
+  6. [Testing](#testing)
 
   ## Description ##
 
@@ -73,6 +74,9 @@ function generateMarkdown(data) {
 
   ## Contributions ##
   ${data.contributions}
+
+  ## Testing ##
+  ${data.testing}
 
 `;
 }

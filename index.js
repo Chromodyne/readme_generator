@@ -13,7 +13,8 @@ const questions = [
     "What are your installation instructions? (e.g npm i ...)",
     "What are your usage instructions?",
     "What license does your project use?",
-    "What are your contribution instructions?"
+    "What are your contribution instructions?",
+    "What are your testing instructions?"
 ];
 
 //Array holding the various licenses. Not an exhaustive list.
@@ -70,6 +71,11 @@ function getUserData () {
             type: "input",
             message: questions[7],
             name: "contributors"
+        },
+        {
+            type: "input",
+            message: questions[8],
+            name: "testing"
         }
         //After grabbing user data through prompts
     ]).then( (response) => {
@@ -78,7 +84,7 @@ function getUserData () {
 }
 //This function writes to the generated README using the data received from the inquirer input.
 function writeReadme(data) {
-    //Pass destructured data from inquirer to markdownGenerator form README then write
+    //Pass destructured objects from inquirer to markdownGenerator form README then write
     writeToFile("README.md", markdownGenerator({...data}));
 }
 

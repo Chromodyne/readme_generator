@@ -1,4 +1,4 @@
-# undefined #
+# readme_generator #
 
   
 
@@ -10,11 +10,15 @@
 
   [License](#license)
 
-  []
+  [Installation](#installation)
+
+  [Usage](#usage)
+
+  [Contributions](#contributions)
 
   ## Description ##
 
-  5
+  This is some description text I plan to use in the README.
 
   ## License ##
 
@@ -22,6 +26,6 @@
 
   ## Use ##
 
-  ## Contributing ##
+  ## Contributions ##
 
 

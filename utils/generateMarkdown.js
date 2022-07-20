@@ -7,7 +7,7 @@ function renderLicenseBadge(license) {
   if (license !== "None") {
 
     //Return the badge image based on the string passed in from license.
-    return `![License] https://img.shields.io/badge/License-${license}-blue.svg)`;
+    return `![License] (https://img.shields.io/badge/License-${license}-blue.svg)`;
 
   } else {
 
@@ -48,7 +48,7 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   //TODO: Finish this, flesh out contents. Decide on arrangement.
   //Separate blocks maybe? 
-  return `# ${data.title} #\n
+  return `# ${data.project} #\n
   \n
   ${renderLicenseBadge(data.license)}
 
@@ -58,7 +58,11 @@ function generateMarkdown(data) {
 
   [License](#license)
 
-  []
+  [Installation](#installation)
+
+  [Usage](#usage)
+
+  [Contributions](#contributions)
 
   ## Description ##
 
@@ -70,7 +74,7 @@ function generateMarkdown(data) {
 
   ## Use ##
 
-  ## Contributing ##
+  ## Contributions ##
 
 
 `;

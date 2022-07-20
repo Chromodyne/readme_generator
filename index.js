@@ -85,9 +85,5 @@ function init() {
     getUserData();
 }
 
-function hello() {
-    console.log("Hello world!");
-}
-
 // Function call to initialize app
 init();

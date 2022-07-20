@@ -98,6 +98,7 @@ function getUserData () {
 function writeReadme(data) {
     //Pass destructured objects from inquirer to markdownGenerator form README then write
     writeToFile("./generated/README.md", markdownGenerator({...data}));
+    console.log("README generated successfully and placed in the ./generated folder.");
 }
 
 //Called on open. Starts inquiry.

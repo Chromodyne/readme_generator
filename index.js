@@ -70,7 +70,7 @@ function getUserData () {
         {
             type: "input",
             message: questions[7],
-            name: "contributors"
+            name: "contributions"
         },
         {
             type: "input",
@@ -82,10 +82,11 @@ function getUserData () {
         writeReadme(response);
     })
 }
+
 //This function writes to the generated README using the data received from the inquirer input.
 function writeReadme(data) {
     //Pass destructured objects from inquirer to markdownGenerator form README then write
-    writeToFile("README.md", markdownGenerator({...data}));
+    writeToFile("./generated/README.md", markdownGenerator({...data}));
 }
 
 //Called on open. Starts inquiry.

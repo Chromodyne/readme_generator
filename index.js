@@ -18,7 +18,17 @@ const questions = [
 ];
 
 //Array holding the various licenses. Not an exhaustive list.
-const licenseOptions = ["MIT", "GPLv3", "GPLv2", "AGPL_v3", "LGPL_v3", "Apache_2.0", "MIT", "MPL_2.0", "None"];
+const licenseOptions = [
+    "MIT",
+    "GPLv3",
+    "GPLv2",
+    "AGPL_v3",
+    "LGPL_v3",
+    "Apache_2.0",
+    "MIT",
+    "MPL_2.0",
+    "CCv3",
+    "None"];
 
 //Writes the file generated to the current working directory.
 function writeToFile(fileName, data) {

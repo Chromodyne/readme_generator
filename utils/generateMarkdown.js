@@ -9,34 +9,29 @@ function renderLicenseBadge(license) {
 
   } else {
 
-    return;
+    return "";
 
   }
-
-}
-
-//TODO: Figure this out.
-function renderLicenseLink(license) {
 
 }
 
 //Used by the renderLicenseSection function to generate the license text. May be merged.
 function generateLicenseText(license) {
 
-  let licenseText = `## License ##
+  let licenseType = license;
 
-  The license for this project is covered under the ${license} license.`;
+  if (licenseType !== "None") {
 
-  return licenseText;
+    let licenseText = `The license for this project is covered under the ${license} license.`;
 
-}
+    return licenseText;
 
-function renderLicenseSection(license) {
-
-  if (license !== "None") {
-    return generateLicenseText(license);
   } else {
-    return "";
+
+    let licenseText = `This software does not have a license.`;
+
+    return licenseText;
+
   }
 
 }
@@ -64,7 +59,7 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## License ##
-  This software is licensed under a ${data.license} license.
+  ${generateLicenseText(data.license)}
 
   ## Installation ##
   ${data.installation}

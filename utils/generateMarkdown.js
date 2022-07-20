@@ -23,9 +23,9 @@ function renderLicenseLink(license) {
 //Used by the renderLicenseSection function to generate the license text. May be merged.
 function generateLicenseText(license) {
 
-  let licenseText = `## License ##\n
-  \n
-  The license for this project is a ${license} license.`;
+  let licenseText = `## License ##
+
+  The license for this project is covered under the ${license} license.`;
 
   return licenseText;
 
@@ -64,7 +64,7 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## License ##
-  ${data.license}
+  This software is licensed under a ${data.license} license.
 
   ## Installation ##
   ${data.installation}
@@ -77,6 +77,9 @@ function generateMarkdown(data) {
 
   ## Testing ##
   ${data.testing}
+
+  ## Questions ##
+  If you have any questions regarding this software, check out my GitHub at: https://github.com/${data.username} or email me at ${data.email}
 
 `;
 }

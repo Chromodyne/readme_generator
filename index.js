@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+//Necessary imports.
 const inquirer = require("inquirer");
 const markdownGenerator = require("./utils/generateMarkdown");
 const fs = require("fs");
 const path = require("path");
 
-// TODO: Create an array of questions for user input
+//Array containing the questions inquirer uses.
 const questions = [
     "What is your GitHub Username?",
     "What is your email address?",
@@ -13,17 +13,18 @@ const questions = [
     "What are your installation instructions? (e.g npm i ...)",
     "What are your usage instructions?",
     "What license does your project use?",
-    "Are there any contributors?"
+    "What are your contribution instructions?"
 ];
 
+//Array holding the various licenses. Not an exhaustive list.
 const licenseOptions = ["MIT", "GPLv3", "GPLv2", "AGPL_v3", "LGPL_v3", "Apache_2.0", "MIT", "MPL_2.0", "None"];
 
-// TODO: Create a function to write README file
+//Writes the file generated to the current working directory.
 function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
 
-// TODO: Create a function to initialize app
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+
+}
 
 //Get user input using inquirer.
 function getUserData () {
@@ -81,6 +82,7 @@ function writeReadme(data) {
     writeToFile("README.md", markdownGenerator({...data}));
 }
 
+//Called on open. Starts inquiry.
 function init() {
     getUserData();
 }

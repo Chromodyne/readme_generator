@@ -2,12 +2,10 @@
 function renderLicenseBadge(license) {
   
   //Check that the license is not "None" then render the badge. If it is "None" then return the empty string.
-  //TODO - Change license options in index.js to match the name directly so we can directly insert the name here
-  //to reduce bloat.
   if (license !== "None") {
 
     //Return the badge image based on the string passed in from license.
-    return `![License] (https://img.shields.io/badge/License-${license}-blue.svg)`;
+    return `![License](https://img.shields.io/badge/License-${license}-blue.svg)`;
 
   } else {
 
@@ -43,39 +41,38 @@ function renderLicenseSection(license) {
 
 }
 
-// TODO: Create a function to generate markdown for README
 //Generates the markdown used in creating the README.md file.
 function generateMarkdown(data) {
-  //TODO: Finish this, flesh out contents. Decide on arrangement.
-  //Separate blocks maybe? 
+
   return `# ${data.project} #\n
-  \n
   ${renderLicenseBadge(data.license)}
 
   ## Contents ##
 
-  [Description](#description)
+  1. [Description](#description)
 
-  [License](#license)
 
-  [Installation](#installation)
+  3. [Installation](#installation)
 
-  [Usage](#usage)
+  4. [Usage](#usage)
 
-  [Contributions](#contributions)
+  5. [Contributions](#contributions)
 
   ## Description ##
 
   ${data.description}
 
   ## License ##
+  ${data.license}
 
   ## Installation ##
+  ${data.installation}
 
   ## Use ##
+  ${data.usage}
 
   ## Contributions ##
-
+  ${data.contributions}
 
 `;
 }
